@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  selector:
+    matchLabels:
+      name: os-project-deployment
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: os-project-deployment
+    spec:
+      containers:
+      - name: os
+        image: abdalla231/os_proj
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
