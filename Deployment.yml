@@ -5,16 +5,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: os-project-deployment
+      name: os-project
   replicas: 3
   template:
     metadata:
       labels:
-        name: os-project-deployment
+        name: os-project
     spec:
       containers:
-      - name: os
-        image: abdalla231/os_proj
+      - name: os1
+        image: abdalla231/osproject
         imagePullPolicy: IfNotPresent
         resources:
           limits:
